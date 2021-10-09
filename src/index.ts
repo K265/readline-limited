@@ -57,6 +57,8 @@ export class Readline implements IReadline {
   }
 
   close() {
+    this.ev.removeAllListeners("line");
+    this.inputStream.removeAllListeners("data");
     this.inputStream.close();
   }
 
