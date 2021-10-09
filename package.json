@@ -1,6 +1,6 @@
 {
   "name": "readline-limited",
-  "version": "0.1.5",
+  "version": "0.1.6",
   "description": "A Node.js package to read a file line by line, with line size limit support.",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
