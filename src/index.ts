@@ -14,11 +14,7 @@ export class Readline implements IReadline {
   ev = new EventEmitter();
   inputStream: fs.ReadStream;
 
-  constructor(
-    p: string,
-    maxCharsPerLine: number,
-    encoding: BufferEncoding = "ascii"
-  ) {
+  constructor(p: string, maxCharsPerLine: number, encoding: BufferEncoding) {
     this.inputStream = fs.createReadStream(p, {
       encoding,
       highWaterMark: maxCharsPerLine,
@@ -74,5 +70,5 @@ export class Readline implements IReadline {
 export const readline = (
   p: string,
   maxCharsPerLine: number,
-  encoding: BufferEncoding = "ascii"
+  encoding: BufferEncoding = "binary"
 ): IReadline => new Readline(p, maxCharsPerLine, encoding);
